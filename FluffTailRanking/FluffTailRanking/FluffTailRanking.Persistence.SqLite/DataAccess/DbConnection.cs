@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FluffTailRanking.Persistence.SqLite.DataModels;
 
 namespace FluffTailRanking.Persistence.SqLite.DataAccess
 {
@@ -26,6 +27,9 @@ namespace FluffTailRanking.Persistence.SqLite.DataAccess
         public async Task InitializeDatabase()
         {
             // TODO
+            connection.CreateTable<Player>();
+            connection.CreateTable<Team>();
+            connection.CreateTable<Game>();
         }
 
         public SQLiteConnection GetConnection()

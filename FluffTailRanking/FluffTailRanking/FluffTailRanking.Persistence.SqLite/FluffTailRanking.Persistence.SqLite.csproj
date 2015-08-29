@@ -113,14 +113,24 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Converter\ModelConverter.cs" />
     <Compile Include="DataAccess\DbConnection.cs" />
     <Compile Include="DataAccess\IDbConnection.cs" />
+    <Compile Include="DataAccess\SQLitePersistenceManager.cs" />
+    <Compile Include="DataModels\Game.cs" />
     <Compile Include="DataModels\Player.cs" />
+    <Compile Include="DataModels\Team.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="Properties\FluffTailRanking.Persistence.SqLite.rd.xml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Repository\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FluffTailRanking.BusinessLayer\FluffTailRanking.BusinessLayer.csproj">
+      <Project>{adc832ef-9785-457a-af6f-3ec40a55f79a}</Project>
+      <Name>FluffTailRanking.BusinessLayer</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
