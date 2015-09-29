@@ -12,7 +12,7 @@ namespace FluffTailRanking.Persistence.SqLite.DataModels
     public class Game
     {
         [PrimaryKey]
-        public Guid ID { get; set; }
+        public int ID { get; set; }
         public Team Team1 { get; set; }
         public Team Team2 { get; set; }
 

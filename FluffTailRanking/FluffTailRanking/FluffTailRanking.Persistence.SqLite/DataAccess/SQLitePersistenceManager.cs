@@ -1,16 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-
 
 using FluffTailRanking.BusinessLayer.BusinessObjects;
 using SQLite.Net;
 
 namespace FluffTailRanking.Persistence.SqLite.DataAccess
 {
+    /// <summary>
+    /// Implements an implementation of the persistencemanager by SQLite technology
+    /// </summary>
     public class SQLitePersistenceManager : FluffTailRanking.BusinessLayer.Persistence.IPersistenceManager
     {
         private SQLiteConnection conn;
@@ -23,7 +21,14 @@ namespace FluffTailRanking.Persistence.SqLite.DataAccess
         public List<Game> GetAllGames()
         {
             List<FluffTailRanking.Persistence.SqLite.DataModels.Game> results = conn.Query<FluffTailRanking.Persistence.SqLite.DataModels.Game>("SELECT * FROM Games", null);
-            return null;
+
+            List<FluffTailRanking.BusinessLayer.BusinessObjects.Game> convertedFromPersistenceStore = new List<Game>();
+            foreach (FluffTailRanking.BusinessLayer.BusinessObjects.Game game in results)
+            {
+                convertedFromPersistenceStore.Add();
+            }
+
+            return results;
         }
 
         public List<Player> GetAllPlayers()
